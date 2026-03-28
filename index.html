@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive personal portfolio website for Assignment 2." />
+  <title>Ibrahim Abbas Almuhanna | Interactive Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div>
+        <h1>Ibrahim Abbas Almuhanna</h1>
+        <p class="tagline">
+          Software Engineering student passionate about building modern and efficient web applications.
+        </p>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle dark mode">
+        Dark Mode
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section reveal">
+      <div class="container">
+        <h2>About Me</h2>
+
+        <div class="hero-card">
+          <img
+            src="assets/images/profile_image.jpeg"
+            alt="Profile photo of Ibrahim Abbas Almuhanna"
+            class="profile-image"
+            loading="lazy"
+          />
+
+          <div class="hero-text">
+            <p id="personalGreeting" class="greeting-message" aria-live="polite">
+              Welcome to my portfolio.
+            </p>
+            <p>
+              I’m Ibrahim Abbas Almuhanna, a Software Engineering student who joined university in 2021.
+              I enjoy developing structured, user-friendly applications and continuously improving my
+              programming and problem-solving skills.
+            </p>
+
+            <div class="name-save-box">
+              <label for="visitorName">Your name</label>
+              <div class="name-save-controls">
+                <input
+                  type="text"
+                  id="visitorName"
+                  placeholder="Enter your name"
+                  maxlength="30"
+                />
+                <button id="saveNameBtn" type="button">Save Name</button>
+              </div>
+              <p id="nameFeedback" class="helper-message" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="section-intro">
+          Search and filter the projects below to quickly explore my work.
+        </p>
+
+        <div class="project-toolbar" role="region" aria-label="Project filters">
+          <input
+            type="text"
+            id="projectSearch"
+            class="search-input"
+            placeholder="Search projects by title or keyword"
+            aria-label="Search projects"
+          />
+
+          <div class="filter-buttons" aria-label="Project categories">
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="web">Web</button>
+            <button type="button" class="filter-btn" data-filter="student">Student</button>
+            <button type="button" class="filter-btn" data-filter="ui">UI Practice</button>
+          </div>
+        </div>
+
+        <p id="projectFeedback" class="helper-message" aria-live="polite">
+          Showing all projects.
+        </p>
+
+        <div class="projects-grid" id="projectsGrid">
+          <article class="project-card reveal-item" data-category="web student" data-title="Campus Companion App" data-keywords="schedule dashboard campus deadlines resources">
+            <img
+              src="assets/images/project1.png"
+              alt="Campus Companion App Screenshot"
+              class="project-image"
+            />
+            <span class="project-badge">Web / Student</span>
+            <h3>Campus Companion App</h3>
+            <p>
+              A student-focused web application concept designed to organize class schedules,
+              deadlines, and campus resources in one clean dashboard interface.
+            </p>
+          </article>
+
+          <article class="project-card reveal-item" data-category="web ui" data-title="Task Tracker Web App" data-keywords="tasks productivity validation interface dashboard">
+            <img
+              src="assets/images/project2.png"
+              alt="Task Tracker App Screenshot"
+              class="project-image"
+            />
+            <span class="project-badge">Web / UI Practice</span>
+            <h3>Task Tracker Web App</h3>
+            <p>
+              A lightweight task management interface built to practice structured UI design,
+              input validation, and clean front-end architecture.
+            </p>
+          </article>
+
+          <article class="project-card reveal-item" data-category="ui student" data-title="Study Planner Dashboard" data-keywords="planner reminders courses progress calendar">
+            <img
+              src="assets/images/project1.png"
+              alt="Study Planner Dashboard concept"
+              class="project-image"
+            />
+            <span class="project-badge">Student / UI</span>
+            <h3>Study Planner Dashboard</h3>
+            <p>
+              A dashboard prototype focused on helping students monitor weekly goals,
+              track study sessions, and keep course tasks organized.
+            </p>
+          </article>
+        </div>
+
+        <p id="emptyProjectsMessage" class="empty-state" hidden>
+          No projects found. Try a different keyword or choose another category.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal">
+      <div class="container">
+        <h2>Contact</h2>
+
+        <p>
+          Email:
+          <a href="mailto:s202178330@kfupm.edu.sa">s202178330@kfupm.edu.sa</a>
+        </p>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+            <small class="field-error" id="nameError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <small class="field-error" id="emailError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <small class="field-error" id="messageError" aria-live="polite"></small>
+          </div>
+
+          <button type="submit">Send Message</button>
+          <p id="formStatus" class="status-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Ibrahim Abbas Almuhanna. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
