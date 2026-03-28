@@ -97,21 +97,9 @@ A full explanation is provided in:
 
 ---
 
-## Notes
+## Optional Deployed
 
-- The contact form is front-end only and does not connect to a backend service.
-- The project is designed to be simple, clear, and easy to expand in future assignments.
+`https://ibrahimabbas813.github.io/202178330-IbrahimAlmuhanna-assignment2/`
 
----
-
-## Optional Deployment
-
-If deployed with GitHub Pages, the live site link can be added here:
-
-`https://yourusername.github.io/202178330-IbrahimAbbasAlmuhanna-assignment2/`
-
-Replace `yourusername` with your actual GitHub username.
 
 ---
-
-This project was created for academic purposes.
